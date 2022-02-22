@@ -205,7 +205,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
-            
+
           ],
         ),
       ),
@@ -223,4 +223,5 @@ class _HomeScreenState extends State<HomeScreen> {
       _aValue = value;
     });
   }
+
 }
