@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-enum RadioValue { FIRST, SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH, EIGHTH, NINTH }
+enum RadioValue { MALE, FEMALE, OTHER, FIRST, SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH, EIGHTH, NINTH }
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -22,7 +22,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  RadioValue _gValue = RadioValue.FIRST;
+  RadioValue _gValue = RadioValue.MALE;
   RadioValue _aValue = RadioValue.FIRST;
 
   String region = "";
@@ -53,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   width: 120,
                   child: RadioListTile(
                     title: Text('男性'),
-                    value: RadioValue.FIRST,
+                    value: RadioValue.MALE,
                     groupValue: _gValue,
                     onChanged: (value) => _onGenderRadioSelected(value),
                   ),
@@ -62,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   width: 120,
                   child: RadioListTile(
                     title: Text('女性'),
-                    value: RadioValue.SECOND,
+                    value: RadioValue.FEMALE,
                     groupValue: _gValue,
                     onChanged: (value) => _onGenderRadioSelected(value),
                   ),
@@ -72,7 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           RadioListTile(
             title: Text('その他'),
-            value: RadioValue.THIRD,
+            value: RadioValue.OTHER,
             groupValue: _gValue,
             onChanged: (value) => _onGenderRadioSelected(value),
           ),
@@ -234,6 +234,15 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
+          ElevatedButton(
+              onPressed: (){
+                print(_gValue);
+                print(_aValue);
+                print(region);
+                print(postCode);
+              },
+              child: Text("確認"),
+          )
         ],
       ),
     );
